@@ -27,14 +27,14 @@ All configurations can be done via environment variable or configuration file
 
  - `LFS_BASE_URL` - URL of the LFS server - **required**
  - `LFS_PORT` - HTTP portal of the LFS server, defaults to `3000` - **required**
- - `LFS_STORE_TYPE` - Object store type, can be either `s3` (for AWS S3), `s3_direct` (for direct upload and download from AWS S3) or `grid` (for MongoDB GridFS), defaults to `s3`  - **required**
+ - `LFS_STORE_TYPE` - Object store type, can be either `s3` (for AWS S3) or `grid` (for MongoDB GridFS), defaults to `s3`  - **required**
  - `LFS_AUTHENTICATOR_TYPE` - Authenticator type, can be `basic` (for basic username and password), `none` (for no authentication), defaults to `none` - **required**
  - `LFS_JWT_ALGORITHM` - JWT signature algorithm, defaults to `HS256`
  - `LFS_JWT_SECRET` - JWT signature secret - **required**
  - `LFS_JWT_ISSUER` - Issuer of the JWT token, defaults to `node-git-lfs`
  - `LFS_JWT_EXPIRES` - JWT token expire time, defaults to `30m`
 
-If **storage type** is `s3` or `s3_direct`:
+If **storage type** is `s3`:
 
  - `AWS_ACCESS_KEY` - AWS access key - **required**
  - `AWS_SECRET_KEY` - AWS secret key - **required**
