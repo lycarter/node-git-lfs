@@ -1,31 +1,25 @@
 {
-  "base_url": "http://localhost:3000/",
-  "port": 3000,
+  "base_url": "http://localhost:9999/",
+  "port": 9999,
   "private": false,
+  "authenticator": {
+    "type": "none",
+    "options": {}
+  },
+  "ssh": {
+    "enabled": false
+  },
   "store": {
     "type": "s3",
-    "options": {}
+    "options": {
+      "bucket": "lcarter-blog-lfs",
+      "region": "us-east-1"
+    }
   },
   "jwt": {
     "algorithm": "HS256",
     "secret": "node-git-lfs-jwt-test-key",
     "issuer": "node-git-lfs",
     "expiresIn": "30m"
-  },
-  "authenticator": {
-    "type": "basic",
-    "options": {
-      "username": "test",
-      "password": "test"
-    }
-  },
-  "ssh": {
-    "enabled": true,
-    "port": 2222,
-    "ip": "0.0.0.0",
-    "key": {
-      "public": "./ssh/server.pub",
-      "private": "./ssh/server.pri"
-    }
   }
 }
