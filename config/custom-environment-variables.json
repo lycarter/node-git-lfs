@@ -27,14 +27,5 @@
       "password": "LFS_AUTHENTICATOR_PASSWORD",
       "client_public_key": "LFS_AUTHENTICATOR_CLIENT_PUBLIC_KEY"
     }
-  },
-  "ssh": {
-    "enabled": "LFS_SSH_ENABLED",
-    "port": "LFS_SSH_PORT",
-    "ip": "LFS_SSH_IP",
-    "key": {
-      "public": "LFS_SSH_PUBLIC_KEY",
-      "private": "LFS_SSH_PRIVATE_KEY"
-    }
   }
 }

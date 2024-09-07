@@ -1,4 +1,4 @@
-'use strict';
+    'use strict';
 
 var child_process = require('child_process');
 var stream = require('stream');
@@ -13,8 +13,8 @@ var should = chai.should();
 
 var S3Store = require('../../lib/store/s3_store');
 
-const TEST_AWS_ACEESS_KEY = 'test';
-const TEST_AWS_SECRET_KEY = 'test';
+const TEST_AWS_ACEESS_KEY = 'test1';
+const TEST_AWS_SECRET_KEY = 'test2';
 const TEST_S3_BUCKET = 'test';
 const TEST_S3_ENDPOINT = 'http://localhost:4569';
 
@@ -24,21 +24,35 @@ describe('S3 Store', function() {
     var s3_server, s3_client, store;
 
     beforeEach(function (done) {
+        console.log("before each 1")
+
         // cleanup s3 folder
         child_process.execSync('rm -rf s3 && mkdir -p s3', {
             cwd: '/tmp'
         });
+
+        console.log("before each 2")
 
         // setup mock s3 server
         s3_server = new S3rver({
             port: 4569,
             hostname: 'localhost',
             silent: false,
-            directory: '/tmp/s3'
+            directory: '/tmp/s3',
+            configureBuckets: [
+                {
+                    name: "test3",
+                    configs: []
+                }
+            ]
         }).run(function (err, host, port) {
+                console.log("EXECUTING s3rver")
+
                 if(err) {
                     return done(err);
                 }
+                console.log("no err")
+
 
                 s3_client = new AWS.S3({
                     accessKeyId: TEST_AWS_ACEESS_KEY,
@@ -47,12 +61,20 @@ describe('S3 Store', function() {
                     s3ForcePathStyle: true
                 });
 
+                console.log("init client")
+
                 var params = {
                     Bucket: TEST_S3_BUCKET
                 };
 
+                console.log("init params")
+
                 s3_client.createBucket(params, done);
+                console.log("created bucket")
+
             });
+
+        console.log("before each 3")
 
         store = new S3Store({
             'access_key': TEST_AWS_ACEESS_KEY,
@@ -60,6 +82,8 @@ describe('S3 Store', function() {
             'endpoint': TEST_S3_ENDPOINT,
             'bucket': TEST_S3_BUCKET
         });
+
+        console.log("before each 4")
 
     });
 
@@ -71,10 +95,17 @@ describe('S3 Store', function() {
     });
 
     it('should allow config endpoint', function() {
+        console.log("EXECUTING test")
+
         let endpoint = 'http://localhost:4569';
         let store = new S3Store({
             'endpoint': endpoint
         });
+
+        console.log("store._s3.config.endpoint")
+        console.log(store._s3.config.endpoint)
+        console.log("value above")
+
 
         store._s3.config.endpoint.should.equal(endpoint);
     });

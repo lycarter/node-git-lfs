@@ -2,22 +2,13 @@
   "store": {
     "options": {
       "endpoint": "http://localhost:4569",
-      "bucket": "test",
-      "access_key": "test",
-      "secret_key": "test",
+      "bucket": "test3",
+      "access_key": "test1",
+      "secret_key": "test2",
       "grid_connection": "mongodb://localhost:27017/test"
     }
   },
   "authenticator": {
-    "type": "test"
-  },
-  "ssh": {
-    "enabled": true,
-    "port": 2222,
-    "ip": "0.0.0.0",
-    "key": {
-      "public": "./ssh/server.pub",
-      "private": "./ssh/server.pri"
-    }
+    "type": "none"
   }
 }

@@ -13,7 +13,6 @@ npm install node-git-lfs
 ## Features
 
   - Support [Git LFS v1 Batch API](https://github.com/github/git-lfs/blob/master/docs/api/http-v1-batch.md)
-  - Support [SSH Authentication](https://github.com/github/git-lfs/tree/master/docs/api#authentication)
   - Multiple store supported - currently `AWS S3` and `MongoDB GridFS`
   - Multiple authentication method support - currently `basic` and `none`
   - Use [JWT](http://jwt.io) to secure `download`, `upload` and `verify` endpoints
@@ -52,12 +51,3 @@ If **authenticator type** is `basic`:
   - `LFS_AUTHENTICATOR_USERNAME` - Username - **required**
   - `LFS_AUTHENTICATOR_PASSWORD` - Password - **required**
   - `LFS_AUTHENTICATOR_CLIENT_PUBLIC_KEY` - Location of the client's public key
-
-
-##### SSH Environment Variables
-
-  - `LFS_SSH_ENABLED` - Enable SSH server, defaults to `true`
-  - `LFS_SSH_PORT` - SSH server port, defaults to `2222`
-  - `LFS_SSH_IP` - SSH server bind IP, defaults to `0.0.0.0`
-  - `LFS_SSH_PUBLIC_KEY` - SSH server public key - **required** if SSH is enabled
-  - `LFS_SSH_PRIVATE_KEY` - SSH server private key - **required** if SSH is enabled

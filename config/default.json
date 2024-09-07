@@ -6,9 +6,6 @@
     "type": "none",
     "options": {}
   },
-  "ssh": {
-    "enabled": false
-  },
   "store": {
     "type": "s3",
     "options": {
