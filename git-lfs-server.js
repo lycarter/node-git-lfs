@@ -12,6 +12,9 @@ const SSH_ENABLED = config.get('ssh.enabled');
 
 app.set('port', PORT);
 
+// Add a console transport to the logger
+logger.add(new logger.transports.Console());
+
 /**
  * Create HTTP server.
  */
