@@ -51,6 +51,7 @@ function onError(error) {
 
 function onListening() {
     logger.info('Listening LFS on port ' + server.address().port);
+    logger.info('Version ' + require('./package.json').version);
 }
 
 if (SSH_ENABLED) {
