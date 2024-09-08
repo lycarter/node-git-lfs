@@ -1,6 +1,6 @@
 {
   "name": "node-git-lfs",
-  "version": "0.0.1-19-g84a7fe0-1-gd83b975-1-g2bb2ca8-1-g0d0edf7",
+  "version": "0.0.3",
   "license": "Apache-2.0",
   "description": "Git LFS server NodeJS implementation",
   "scripts": {
