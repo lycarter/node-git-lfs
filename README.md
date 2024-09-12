@@ -1,9 +1,8 @@
 # Node Git LFS
-[![Build Status](https://travis-ci.org/kzwang/node-git-lfs.svg?branch=master)](https://travis-ci.org/kzwang/node-git-lfs)
-[![Coverage Status](https://coveralls.io/repos/kzwang/node-git-lfs/badge.svg?branch=master&service=github)](https://coveralls.io/github/kzwang/node-git-lfs?branch=master)
-[![Code Climate](https://codeclimate.com/github/kzwang/node-git-lfs/badges/gpa.svg)](https://codeclimate.com/github/kzwang/node-git-lfs)
 
 A NodeJS implementation of [Git LFS](https://git-lfs.github.com/) Server.
+
+This code is forked from [kzwang/node-git-lfs](https://github.com/kzwang/node-git-lfs), and the primary changes I made were to upgrade to the [AWS SDK for js v3](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/), since the original implementation used [AWS SDK for js v2](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/aws-jsdk-reference.html), which is [deprecated](https://aws.amazon.com/blogs/developer/announcing-end-of-support-for-aws-sdk-for-javascript-v2/) and will lose support in September 2025. I have not tested anything except the `none` authenticator using S3, since that's the config I use (I only run this on localhost). I recommend following the code from [my blog](https://github.com/lycarter/blog/blob/bb4815ab16b8b471ace15a04f22ea55566764210/.github/workflows/build-and-deploy-to-s3.yml) to get this set up locally or with Github Actions. Good luck!
 
 ## Installation
 ```shell
